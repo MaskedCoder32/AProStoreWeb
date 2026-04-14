@@ -3,57 +3,78 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #050505;
+  background-color: #030712; /* Richer, deeper dark background */
   color: white;
 }
 
 .font-wide {
   font-family: 'Clash Display', sans-serif;
-  font-weight: 700;
 }
 
-/* Vertical grid overlay */
+/* Enhanced Background Grid & Glows */
 .bg-grid {
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 80px 100%;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Green Gradients */
+.glow-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Premium Text Gradients */
 .text-grad-green {
-  background: linear-gradient(90deg, #10b981 0%, #34d399 50%, #059669 100%);
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-/* Premium UI Card */
+/* Enhanced Cards */
 .feature-card {
-  background-color: #0a0a0c;
-  border: 1px solid rgba(16, 185, 129, 0.1);
-  border-radius: 20px;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .feature-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.15);
 }
 
 .icon-box { 
-  background: rgba(16, 185, 129, 0.1); 
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.05)); 
   border: 1px solid rgba(16, 185, 129, 0.2); 
 }
 
-/* Scroll Animations */
+/* Drawer Active Link Styling */
+.nav-link.active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border-left: 3px solid #10b981;
+}
+
+/* Scroll Reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .reveal.active {
@@ -67,18 +88,10 @@ body {
   pointer-events: none; z-index: 1; overflow: hidden;
 }
 
-/* Legal Pages Typography */
-.prose-custom h1, .prose-custom h2, .prose-custom h3 {
-  font-family: 'Clash Display', sans-serif;
-  color: white;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.prose-custom p, .prose-custom ul {
-  color: #9999a1;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
+/* Typography for Legal Pages */
+.prose-custom { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); }
+.prose-custom h1, .prose-custom h2 { font-family: 'Clash Display', sans-serif; color: white; margin-top: 2rem; margin-bottom: 1rem; }
+.prose-custom p, .prose-custom ul { color: #9ca3af; line-height: 1.8; margin-bottom: 1rem; }
 .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; }
 .prose-custom b { color: white; }
 .prose-custom hr { border-color: rgba(255,255,255,0.1); margin: 2rem 0; }
