@@ -5,54 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms & Conditions | APro Store</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="relative overflow-x-hidden min-h-screen flex flex-col items-center">
-  <div class="bg-grid"></div>
-  <div id="particles-container"></div>
+<body class="flex flex-col min-h-screen">
+  <div class="bg-grid"></div><div class="glow-orb"></div><div id="particles-container"></div>
   
-  <!-- COPY NAVBAR & DRAWER FROM INDEX.HTML HERE -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 py-5 border-b border-transparent transition-all duration-300 bg-[#030712]/50 backdrop-blur-md">
+    <div class="w-full max-w-[1100px] mx-auto px-5 sm:px-8 flex justify-between items-center">
+      <a href="/" class="text-[28px] tracking-tight font-wide transition-transform hover:scale-105 shrink-0">
+        <span class="text-white font-bold">APro</span><span class="text-emerald-500 font-bold">Store</span>
+      </a>
+      <button onclick="toggleMenu()" class="text-gray-300 hover:text-white transition-colors p-2 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 backdrop-blur-sm cursor-pointer shrink-0">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg>
+      </button>
+    </div>
+  </header>
 
-  <main class="relative z-10 w-full max-w-[800px] px-5 mx-auto pt-32 pb-20">
-    <div class="reveal prose-custom bg-[#0a0a0c] border border-white/10 rounded-2xl p-8 sm:p-12 shadow-2xl">
-      <h1 class="text-4xl text-emerald-400 mb-2 mt-0">Terms & Conditions</h1>
+  <div id="menu-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-400" onclick="toggleMenu()"></div>
+  <nav id="side-menu" class="fixed top-0 right-0 h-full w-[85vw] sm:w-[400px] bg-[#050914]/95 backdrop-blur-3xl border-l border-white/10 z-[70] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-6 sm:p-8 shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+    <div class="flex justify-between items-center mb-8 mt-2">
+      <div class="text-[24px] font-wide"><span class="text-white font-bold">Menu</span></div>
+      <button onclick="toggleMenu()" class="text-gray-400 hover:text-white p-2 bg-white/5 rounded-xl hover:bg-white/10 border border-white/5 transition-all cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="flex flex-col gap-2 text-[17px] font-medium">
+      <a href="/" class="nav-link flex items-center gap-4 px-5 py-3.5 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all border-l-3 border-transparent">Home</a>
+      <a href="/about" class="nav-link flex items-center gap-4 px-5 py-3.5 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all border-l-3 border-transparent">About Us</a>
+      <a href="/terms" class="nav-link flex items-center gap-4 px-5 py-3.5 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all border-l-3 border-transparent">Terms & Conditions</a>
+      <a href="/privacy" class="nav-link flex items-center gap-4 px-5 py-3.5 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all border-l-3 border-transparent">Privacy Policy</a>
+      <a href="/refund" class="nav-link flex items-center gap-4 px-5 py-3.5 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all border-l-3 border-transparent">Refund Policy</a>
+      <a href="/contact" class="nav-link flex items-center gap-4 px-5 py-3.5 rounded-xl text-gray-400 hover:bg-white/5 hover:text-white transition-all border-l-3 border-transparent">Contact Us</a>
+    </div>
+    <div class="mt-auto pt-6 pb-4">
+      <a href="https://t.me/AProStoreBot" target="_blank" class="w-full flex items-center justify-center gap-2 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all">
+        Open Bot 🚀
+      </a>
+    </div>
+  </nav>
+
+  <main class="relative z-10 w-full max-w-[800px] px-5 mx-auto pt-36 pb-20 flex-grow">
+    <div class="reveal prose-custom rounded-3xl p-6 sm:p-12 shadow-2xl w-full">
+      <h1 class="text-3xl sm:text-4xl text-emerald-400 mb-2 mt-0 font-wide">Terms & Conditions</h1>
       <p>Effective Date: January 2025</p>
       <hr>
-
       <p>Welcome to <b>APro Store</b>. By accessing or using our platform, you agree to the following Terms & Conditions.</p>
-
       <h2>1. General Use</h2>
       <p>By using this platform, you confirm that you are at least 18 years old and agree to comply with all applicable laws and regulations.</p>
-
       <h2>2. Digital Products</h2>
       <p>All products available on this platform are classified as <b>digital goods</b>. Delivery is automated or manual depending on availability.</p>
-
       <h2>3. Payments</h2>
       <ul>
         <li>All payments must be made using the provided methods</li>
         <li>Deposited funds are added to your wallet balance</li>
         <li>Prices and exchange rates may change at any time without prior notice</li>
       </ul>
-
       <h2>4. No Refund Policy</h2>
       <ul>
         <li>Deposited funds are <b>non-refundable</b></li>
         <li>Completed orders are <b>final and non-refundable</b></li>
         <li>No chargebacks or disputes are allowed once payment is processed</li>
       </ul>
-
-      <h2>5. User Responsibility</h2>
-      <ul>
-        <li>You are responsible for how you use purchased digital goods</li>
-        <li>We are <b>not responsible</b> for any misuse or consequences</li>
-        <li>You must follow platform rules and guidelines</li>
-      </ul>
-
-      <h2>6. Contact</h2>
-      <p>For any questions, contact us at: <a href="contact.html" class="text-emerald-400 hover:underline">Contact Us Page</a></p>
+      <h2>5. Contact</h2>
+      <p>For any questions, contact us at: <a href="/contact" class="text-emerald-400 hover:underline">Contact Us Page</a></p>
     </div>
   </main>
   
-  <script src="js/app.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 </html>
