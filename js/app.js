@@ -1,5 +1,5 @@
-// Drawer Logic
-function toggleMenu() {
+// Drawer Logic (Globally accessible)
+window.toggleMenu = function() {
   const menu = document.getElementById('side-menu');
   const backdrop = document.getElementById('menu-backdrop');
 
@@ -14,19 +14,18 @@ function toggleMenu() {
     backdrop.classList.remove('opacity-100', 'pointer-events-auto');
     document.body.style.overflow = '';
   }
-}
+};
 
 // Highlight Active Menu Item
 document.addEventListener('DOMContentLoaded', () => {
-  const currentPath = window.location.pathname.replace('.html', '');
+  const currentPath = window.location.pathname.replace('.html', '').replace(/\/$/, '');
   const navLinks = document.querySelectorAll('.nav-link');
   
   navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href').replace('.html', '');
-    // If current path is root (/) or index, highlight Home
-    if ((currentPath === '/' || currentPath === '/index' || currentPath === '') && linkPath === '/') {
+    const linkPath = link.getAttribute('href').replace('.html', '').replace(/\/$/, '');
+    if ((currentPath === '' || currentPath === '/index') && linkPath === '') {
       link.classList.add('active');
-    } else if (currentPath !== '/' && linkPath !== '/' && currentPath.includes(linkPath)) {
+    } else if (currentPath !== '' && linkPath !== '' && currentPath.includes(linkPath)) {
       link.classList.add('active');
     }
   });
@@ -35,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fixed Header Scroll Blur
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
+  if (!navbar) return;
   if (window.scrollY > 20) {
     navbar.classList.add('bg-[#030712]/80', 'backdrop-blur-xl', 'border-white/10', 'shadow-2xl');
     navbar.classList.remove('border-transparent');
@@ -56,9 +56,9 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('DOMContentLoaded', revealOnScroll);
 
-// Floating Premium Particles
-const particleContainer = document.getElementById('particles-container');
+// Floating Particles
 function createParticle() {
+  const particleContainer = document.getElementById('particles-container');
   if(!particleContainer) return;
   const particle = document.createElement('div');
   particle.style.position = 'absolute';
